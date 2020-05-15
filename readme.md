@@ -14,7 +14,7 @@ One of the key things that we can teach our chatbots is to analyse the user's in
 >
 > So that when a user says something like: *"What is the number one pizza?"*
 > The chatbot should match it to the **best-pizza** and respond with:
-> *"Hawaiian Pizza is the best. 🍍+🐷=😍🍕"*
+> "Hawaiian Pizza is the best. 🍍+🐷=😍🍕"*
 
 However, this is not always as straightforward, as it seems, and sometimes triggering expressions in one conversation can affect responses from a different conversation.
 
@@ -151,6 +151,7 @@ The chatbot should be able to handle the following scenarios:
 When the user provides an office name, the chatbot should identify the office, and then return the address.
 
 🦸🏻‍♀️  Where is your Boston office?
+
 🤖  The address is: 14 Oak Park Drive, Bedford, MA 01730
 
 **Scenario B: Where is your office?**
@@ -158,9 +159,13 @@ When the user provides an office name, the chatbot should identify the office, a
 When the user asks for the location of an office but doesn't provide the name of that office. Then the chatbot should prompt the user to specify which office and provide available options. Finally, when the user selects an office, the chatbot should respond with the answer.
 
 👨🏽‍💼  Where is your office?
+
 🤖  Which office are you interested in?
+
 🤖  (Boston) (London) (Sofia)
+
 👨🏽‍💼  Boston
+
 🤖  The address is: 14 Oak Park Drive, Bedford, MA 01730
 
 #### A High-level explanation of how to create a guided task
