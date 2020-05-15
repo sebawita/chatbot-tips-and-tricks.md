@@ -1,8 +1,8 @@
-# Tips and Tricks for Building chatbots with better understanding of user input
+# Tips and Tricks for Building chatbots with a better understanding of user input
 
-One of the key things that we can teach our chatbots is to analyse user's input and redirect the user to the correct conversation. This is done by training our chatbots with a set of Triggering Expressions.
+One of the key things that we can teach our chatbots is to analyse the user's input and redirect the user to the correct conversation. This is done by training our chatbots with a set of Triggering Expressions.
 
-> Triggering Expressions — are sample expressions/senteces that we train our chatbots with to recognise specific Conversations.
+> Triggering Expressions — are sample expressions/sentences that we train our chatbots with to recognise specific Conversations.
 >
 > The idea is that if we have a Q&A type conversation:
 >
@@ -18,7 +18,7 @@ One of the key things that we can teach our chatbots is to analyse user's input 
 
 However, this is not always as straightforward, as it seems, and sometimes triggering expressions in one conversation can affect responses from a different conversation.
 
-In this article we will look at five [NativeChat](https://www.progress.com/nativechat) tips and tricks on how to build chatbots that with great understanding of user input.
+In this article, we will look at five [NativeChat](https://www.progress.com/nativechat) tips and tricks on how to build chatbots with a great understanding of user input.
 
 > If you are not familiar with NLP and how it works, then you should start with this article: [What is Natural Language Processing?](https://www.progress.com/blogs/what-is-natural-language-processing-(nlp))
 
@@ -33,7 +33,7 @@ You can find it in the test window by switching to the **Understanding** tab.
 
 To use it, just type any expressions, press Enter, and NativeChat will respond with:
 
-- the best matched conversation
+- the best-matched conversation
 - the confidence score
 
 > Note, confidence above 65% means that the chatbot would accept that conversation as a valid match.
@@ -48,9 +48,9 @@ You can also use Understanding to see what Entities the chatbot recognises.
 
 ### Tip #2 — Run Problems Check
 
-Sometimes, when we add a new conversation with a set of triggering expressions to our existing chatbots, it is possible that the new triggering expression could interfere with other conversations. As a result of which, it is possible that adding a new conversation to our chatbot could make our chatbot not recognise conversations that used to work just fine.
+Sometimes, when we add a new conversation with a set of triggering expressions to our existing chatbots, it is possible that the new triggering expressions could interfere with other conversations. As a result of which, it is possible that adding a new conversation to our chatbot could make our chatbot not recognise conversations that used to work just fine.
 
-It would be quite hard to manually test every conversation we have in the chatbot. However, NativeChat has a feature called **Problems Check** that allows you to test all the trigerring expressions, and validate them against the conversations that were used to create the NLP Training Model.
+It would be quite hard to manually test every conversation we have in the chatbot. However, NativeChat has a feature called **Problems Check** that allows you to test all the triggering expressions, and validate them against the conversations that were used to create the NLP Training Model.
 
 You can find the **Problems Check** page by either:
 
@@ -59,11 +59,11 @@ You can find the **Problems Check** page by either:
 
 Then start the test by pressing the **Run a quality check** button.
 
-For each triggering expression you will see the expected conversation, the matched conversation, and the confidence level of that match. Like this:
+For each triggering expression, you will see the expected conversation, the matched conversation, and the confidence level of that match. Like this:
 
 <img src="problems-check.gif">
 
-Problems check is a very useful tool to quickly check if there are any conversations that don't get triggered as expected. This way you can identify potential issues, and make sure your user experience stays top notch.
+Problems check is a very useful tool to quickly check if any conversation doesn't get triggered as expected. This way you can identify potential issues, and make sure your user experience stays top-notch.
 
 ### The Very Similar Triggering Expressions problem
 
@@ -80,11 +80,11 @@ When we run **Problems check** against that set of triggering expressions, NLP w
 
 
 
-This is because, in each case NLP will match **(What)**, **(is)**, **(the)**, **(location)**, **(of)**, and **(?)** tokens (words/punctuation marks). While the match to **(officeX)**, will either be exact or too close for the NLP to decide which of the triggering conversations is strong enough to be returned as the correct result.
+This is because, in each case, NLP will match **(What)**, **(is)**, **(the)**, **(location)**, **(of)**, and **(?)** tokens (words/punctuation marks). While the match to **(officeX)**, will either be exact or too close for the NLP to decide which of the triggering conversations is strong enough to be returned as the correct result.
 
 Let's face it, *"What is the location of officeA?"* looks very similar to *"What is the location of officeB?"*.
 
-The thing is that the only part that differentiates each of these triggering expressions is the name of the office. There are various ways in which we could use that and solve the problem at hand.
+The thing is that the only part that differentiates each of these triggering expressions is the name of the office. There are various ways in which we could use that to solve the problem at hand.
 
 In the next 3 tips, we will see 3 different ways of solving this problem.
 
@@ -92,7 +92,7 @@ In the next 3 tips, we will see 3 different ways of solving this problem.
 
 We could solve the above problem by highlighting more important words.
 
-Highlighting is a technique in which we provide additional triggering expressions to the conflicing conversations. The additional expressions should contain the words that we want to highlight with the NLP as more important.
+Highlighting is a technique in which we provide additional triggering expressions to the conflicting conversations. The additional expressions should contain the words that we want to highlight with the NLP as more important.
 
 > "If the word is so nice, you should say it twice."
 
@@ -111,15 +111,15 @@ After we rerun Problems check, all the triggering conversations should get a hig
 
 It is good practice to use the highlighting technique to tell your chatbots, which words should be treated with more importance.
 
-This is useful both in the case where you have a lot of very similar triggering expressions, but also in general, so that your chatbot will always understand what words it should pay special attention to.
+This is useful both in the case where you have a lot of very similar triggering expressions, but also in general so that your chatbot would always understand what words it should pay special attention to.
 
-> Conclusion: Provide your chatbot with multiple expressions, to help the chatbot identify the key words.
+> Conclusion: Provide your chatbot with multiple expressions, to help the chatbot identify the keywords.
 
 ### Tip #4 — Remove Stop Words
 
 We can also improve NLP matching by looking at the **Stop Words**. These are words like: is, are, my, to, the, a, an, of. Words like that usually don't bring much value when it comes to NLP matching process. On the contrary, Stop Words tend to add more unnecessary variables.
 
-Another way to solve the original problem could be achieved by removing the **Stop Words** (is), (the) and (of) from: *"What **~~is~~ ~~the~~** location **~~of~~** officeX?"*. As a result each expression should look like: "What location officeX?". 
+Another way to solve the original problem could be achieved by removing the **Stop Words** (is), (the) and (of) from: *"What **~~is~~ ~~the~~** location **~~of~~** officeX?"*. As a result, each expression should look like: "What location officeX?". 
 Like this:
 
 <img src="./img/remove-stop-words-fix.png">
@@ -132,15 +132,15 @@ Also, when we run Understanding Test for: "What is the location of the officeA?"
 
 <img src="./remove-stop-words-understanding.gif" width="50%">
 
-It is good practive to remove Stop Words from triggering expressions. This way we only keep the words that are useful for NLP matching, as a result we should expect more consistent results.
+It is good practice to remove Stop Words from triggering expressions. This way we only keep the words that are useful for NLP matching, as a result, we should expect more consistent results.
 
-> Conclusion: Make the training expressions concise, to help the chatbot identify the key words.
+> Conclusion: Make the training expressions concise, to help the chatbot identify the keywords.
 
 ### Tip #5 — Convert Similar Q&As to Guided Tasks
 
 We can also use a Guided Task to teach our chatbot how to respond to very similar questions, where the key difference is just the name of the entity (like the office name).
 
-The idea is to create a Guided Tasks where the chatbot is aware of all office entities — together with info like their address or phone number — and provide the right answer to the user. 
+The idea is to create a Guided Task, in which the chatbot is aware of all office entities — together with info like their address or phone number — that provides the address for the requested office.
 
 #### Scenarios
 
@@ -155,7 +155,7 @@ When the user provides an office name, the chatbot should identify the office, a
 
 **Scenario B: Where is your office?**
 
-When the user asks for the location of an office, but doesn't provide the name of that office. Then the chatbot should prompt the user to specify which office, and provide available options. Finally, when the user select an office, the chatbot should respond with the answer.
+When the user asks for the location of an office but doesn't provide the name of that office. Then the chatbot should prompt the user to specify which office and provide available options. Finally, when the user selects an office, the chatbot should respond with the answer.
 
 👨🏽‍💼  Where is your office?
 🤖  Which office are you interested in?
@@ -163,9 +163,9 @@ When the user asks for the location of an office, but doesn't provide the name o
 👨🏽‍💼  Boston
 🤖  The address is: 14 Oak Park Drive, Bedford, MA 01730
 
-#### High-level explanation of how to create a guided task
+#### A High-level explanation of how to create a guided task
 
-Please, note that we will not get into too much details on how to create a guided task here
+Please, note that we will not get into too many details on how to create a guided task here
 
 **Step 1**
 
@@ -211,7 +211,7 @@ Here is how the code for a conversation like this looks like:
 
 **Step 3**
 
-Add conversation trigger to tell the chatbot, when to trigger this conversations.
+Add conversation trigger to tell the chatbot, when to trigger this conversation.
 
 We can use expressions like:
 
@@ -222,7 +222,7 @@ We can use expressions like:
 
 **Step 4**
 
-And now we can test our new conversation, which should be able handle both scenarios:
+And now we can test our new conversation, which should be able to handle both scenarios:
 
 -  Where is the Boston office?
 - Where is your office?
@@ -233,9 +233,9 @@ Like this:
 
 
 
->  Although, building Guided Tasks requires more work upfront, it makes it a lot easier to add a new office, without having to change the flow of the conversation, but also it gives us a lot more control over the flow of the conversation.
+>  Although building Guided Tasks requires more work upfront, it makes it a lot easier to add a new office, without having to change the flow of the conversation, but also it gives us a lot more control over the flow of the conversation.
 
-**How to create a Guided Taks from Start to Finish**
+**How to create a Guided Task from Start to Finish**
 
 You can watch the following video to learn how to create this Guided Task in less than 5 minutes.
 
