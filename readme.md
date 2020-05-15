@@ -38,11 +38,11 @@ To use it, just type any expressions, press Enter, and NativeChat will respond w
 
 > Note, confidence above 65% means that the chatbot would accept that conversation as a valid match.
 
-<img src="Test-with-Understanding.mp4">
+<img src="test-with-understanding.gif">
 
 You can also use Understanding to see what Entities the chatbot recognises.
 
-<img src="understanding-entity.mp4" width="400px">
+<img src="understanding-entity.gif" width="400px">
 
 > It is good practice to regularly check the changes that we make to our chatbot's training, and make sure that we get the results that we expect.
 
@@ -61,7 +61,7 @@ Then start the test by pressing the **Run a quality check** button.
 
 For each triggering expression you will see the expected conversation, the matched conversation, and the confidence level of that match. Like this:
 
-<img src="Problems-check.mp4">
+<img src="problems-check.gif">
 
 Problems check is a very useful tool to quickly check if there are any conversations that don't get triggered as expected. This way you can identify potential issues, and make sure your user experience stays top notch.
 
@@ -103,7 +103,7 @@ This way, NLP will understand that **officeA** is very important, and it will pr
 
 This is how you can update all failing conversations, and rerun Problems check.
 
-<img src="highlighting-important-words.mp4">
+<img src="highlighting-important-words.gif">
 
 After we rerun Problems check, all the triggering conversations should get a high-confidence match.
 
@@ -229,7 +229,7 @@ And now we can test our new conversation, which should be able handle both scena
 
 Like this:
 
-<img src="guided-task-test.mp4" height="500">
+<img src="guided-task-test.gif" height="500">
 
 
 
@@ -239,9 +239,11 @@ Like this:
 
 You can watch the following video to learn how to create this Guided Task in less than 5 minutes.
 
-  <video width="600px" controls playsinline>       <source src="convert-similar-Q&As-to-guided-tasks.mp4" type="video/mp4">       Your browser does not support the video tag.     </video>
-
-
+<video width="600px" controls playsinline>
+  <source src="convert-similar-Q&As-to-guided-tasks.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  <a href="./convert-similar-Q&As-to-guided-tasks.mp4?raw=true">Download the video from here</a>
+</video>
 
 ### Summary
 
